@@ -6,6 +6,8 @@ Only apt manager. For example Ubuntu, Debian
 
 ``I recommend using it Debian. Requires 1 core, 1GB of RAM and 10-15GB of free disk space``
 
+Thanks project: ...
+
 Use the command to download and run the script:
 ```sh
 apt-get update -qq && apt-get install -y git -qq && git clone -q https://github.com/sergeybezlepkin/vpn-wg-v14.git && cd vpn-wg-v14 && chmod +x menu.sh && ./menu.sh
