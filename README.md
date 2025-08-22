@@ -2,5 +2,5 @@
 
 Use the command to download and run the script:
 ```sh
-curl -L -O https://raw.githubusercontent.com/sergeybezlepkin/vpn-wg-v14/main/menu.sh && chmod +x menu.sh && ./menu.sh
+apt-get update -qq && apt-get install -y git -qq && git clone -q https://github.com/sergeybezlepkin/vpn-wg-v14.git && cd vpn-wg-v14 && chmod +x menu.sh && ./menu.sh
 ```
