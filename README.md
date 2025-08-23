@@ -2,11 +2,11 @@
 
 Only apt manager. For example Ubuntu, Debian
 
-``I did a test run of the installation and configuration in Ubuntu 22.04, Ubuntu 24.04 and Debian 11, Debian 12``
+``I did a test run of the installation and configuration in Ubuntu 24.04, Ubuntu 22.04, and Debian 12, Debian 11``
 
-``I recommend using it Debian. Requires 1 core, 1GB of RAM and 10-15GB of free disk space``
+``I recommend using it Debian. Requires 1 core, 1GB of RAM and 15GB of free disk space``
 
-Thanks project: 
+Thanks projects: [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy), [letsencrypt](https://github.com/jwilder/docker-letsencrypt-nginx-proxy-companion), [wg-easy](https://github.com/wg-easy/wg-easy), [beszel](https://github.com/henrygd/beszel), [watchtower](https://github.com/containrrr/watchtower) 
 
 Use the command to download and run the script:
 ```sh
