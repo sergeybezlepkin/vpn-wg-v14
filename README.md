@@ -15,6 +15,7 @@ Economy determines politics, law, ideology. Open news from the USA, Britain, Ger
 
 -  Containers only (Docker)
 -  Low resource consumption
+-  Only 3 files to run
 -  Installation and configuration via one point
 -  Secure: Setting up encryption, proxying and default domain name
 -  Configuring and Setting Default Observability
