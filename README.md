@@ -6,7 +6,7 @@ Only apt manager. For example Ubuntu, Debian
 
 ``I recommend using it Debian. Requires 1 core, 1GB of RAM and 10-15GB of free disk space``
 
-Thanks project: ...
+Thanks project: 
 
 Use the command to download and run the script:
 ```sh
