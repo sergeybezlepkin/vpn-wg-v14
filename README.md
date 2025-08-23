@@ -10,5 +10,5 @@ Thanks project: ...
 
 Use the command to download and run the script:
 ```sh
-apt-get update -qq && apt-get install -y git -qq && git clone -q https://github.com/sergeybezlepkin/vpn-wg-v14.git && cd vpn-wg-v14 && chmod +x menu.sh && ./menu.sh
+curl -sL https://github.com/sergeybezlepkin/vpn-wg-v14/archive/refs/heads/main.tar.gz | tar xz && cd vpn-wg-v14-main && chmod +x menu.sh && ./menu.sh
 ```
