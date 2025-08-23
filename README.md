@@ -1,6 +1,7 @@
 # Automatic installation and configuration of WireGuard VPN server with web interface, node monitoring, with encryption on a free domain name
 
-
+![menu.sh](/docs/screenshots/menu.PNG)
+*Screenshot of running script
 
 ### What does the project do? 
 
