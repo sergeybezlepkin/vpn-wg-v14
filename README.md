@@ -1,8 +1,14 @@
 # Automatic installation and configuration of WireGuard VPN server with web interface, node monitoring, with encryption on a free domain name
 
-## What does the project do? What problem does it solve?
+
+
+### What does the project do? 
 
 This project is a collection of open technologies that allows both users and administrators to run their own VPN server using automation
+
+### What problem does it solve?
+
+Economy determines politics, law, ideology. Open news from the USA, Britain, Germany, Russia, France, the crisis of these countries, the economic crisis of these countries pushes to adopt laws, laws that will limit the network space. The limitation of the network space is followed by a limitation of technology, a limitation of access to information. Information and technology become private, limited and this is a light breeze before a strong storm. Break it, use a simple setup, install your private network in any country where you can buy a server, and get access to technology and information, be prepared for the storm
 
 ## Main features
 
