@@ -26,7 +26,7 @@ Thanks to these projects: [nginx-proxy](https://github.com/nginx-proxy/nginx-pro
 
 Purchase a VPS or VDS server with the following minimum specifications: 1 CPU core, 1 GB RAM, and 15 GB of free disk space
 
-``OS requirements: Only distributions with the APT package manager (e.g. Ubuntu or Debian) are supported``
+Only distributions with the APT package manager (e.g. Ubuntu or Debian) are supported
 
 ``Installation and configuration tested on: Ubuntu 24.04, Ubuntu 22.04, Debian 12, Debian 11``
 
