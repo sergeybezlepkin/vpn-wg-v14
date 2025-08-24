@@ -28,7 +28,6 @@ script1() {
 	echo "iptables-persistent iptables-persistent/autosave_v4 boolean true" | debconf-set-selections &> /dev/null
 	echo "iptables-persistent iptables-persistent/autosave_v6 boolean true" | debconf-set-selections &> /dev/null
 	apt install -y curl git nano nmap iptables-persistent &> /dev/null
-	git clone $repo &> /dev/null
 
 
 	if command -v docker &> /dev/null; then
