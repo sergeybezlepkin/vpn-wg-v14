@@ -219,7 +219,7 @@ script1() {
 		docker compose -f $compose_file down &> /dev/null
 		docker volume rm vpn-wg-v14_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
 		rm -r $compose_file &> /dev/null
-		curl -L -O https://github.com/sergeybezlepkin/vpn-wg-v14/blob/main/compose.yml &> /dev/null
+		curl -L -O https://github.com/sergeybezlepkin/vpn-wg-v14/main/compose.yml &> /dev/null
 		exit 1
 	fi
 
