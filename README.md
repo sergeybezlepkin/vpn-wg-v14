@@ -34,9 +34,9 @@ Launch terminal with superuser rights (root) and use the command to download and
 ```sh
 curl -sL https://github.com/sergeybezlepkin/vpn-wg-v14/archive/refs/heads/main.tar.gz | tar xz && cd vpn-wg-v14-main && chmod +x menu.sh && ./menu.sh
 ```
-If there is no curl, we do the installation
+If there is no curl and tar, we do the installation
 ```sh
-apt update -qq && apt install -qq curl -y
+apt update -qq && apt install -qq curl tar -y
 ```
 
 or
@@ -53,3 +53,16 @@ Make the menu.sh file executable and run it
 ```sh
 chmod +x menu.sh && ./menu.sh
 ```
+
+After running the script, select the first item for installation and configuration. During the installation and configuration, the script will ask questions that you will need to answer.
+
+The script also offers other actions:
+
+-  Reset the password of the VPN server web panel (item 2)
+-  Reset the password of the web monitoring panel (item 3)
+-  Remind whether the server is running and what domain names are registered (item 4)
+-  Configure notifications in Telegram in the monitoring system (item 5)
+
+## License
+
+This project uses the [MIT](https://github.com/sergeybezlepkin/vpn-wg-v14/blob/main/LICENSE)
