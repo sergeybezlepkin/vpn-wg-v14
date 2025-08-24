@@ -215,25 +215,26 @@ script1() {
 			echo -e "${GREEN}All certificates received${NC}"
 			sleep 2
 	else
-		echo -e "${RED}The problem is on the side of the certificate authority. The script will be stopped in an emergency, try to start it again in a few minutes${NC}"
-		docker compose -f $compose_file down &> /dev/null
-		docker volume rm vpn-wg-v14_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
-		rm -r $compose_file &> /dev/null
-		curl -L -O https://github.com/sergeybezlepkin/vpn-wg-v14/main/compose.yml &> /dev/null
-		exit 1
-	fi
+                echo -e "${RED}The problem is on the side of the certificate authority. The script will be stopped in an emergency, try to start it again in a few minutes${NC}"
+                docker compose -f $compose_file down &> /dev/null
+                docker volume rm vpn-wg-v14_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
+                rm -r $compose_file &> /dev/null
+                curl -L -O https://raw.githubusercontent.com/sergeybezlepkin/vpn-wg-v14/main/compose.yml &> /dev/null
+                exit 1
+    fi
 
-	if nmap -sU -p $random_wg_port $ip &> /dev/null; then
-		echo -e "${GREEN}Your port $random_wg_port is open${NC}"
-	else
-		echo -e "Your port $random_wg_port is not open. You need to contact your service provider and show the output below. And run the script again${NC}"
-		docker compose -f $compose_file down &> /dev/null
-        docker volume rm wg_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
-		rm -r vpn-wg-v14/ &> /dev/null
-		git clone $repo &> /dev/null
-		nmap -sU -p $random_wg_port $ip
-		exit 1
-	fi
+    if nmap -sU -p $random_wg_port $ip &> /dev/null; then
+                echo -e "${GREEN}Your port $random_wg_port is open${NC}"
+    else
+                echo -e "Your port $random_wg_port is not open. You need to contact your service provider and show the output below. And run the script again${NC}"
+                docker compose -f $compose_file down &> /dev/null
+                docker volume rm vpn-wg-v14_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
+                rm -r $compose_file &> /dev/null
+                curl -L -O https://raw.githubusercontent.com/sergeybezlepkin/vpn-wg-v14/main/compose.yml &> /dev/null
+                nmap -sU -p $random_wg_port $ip
+                exit 1
+    fi
+	
 	echo
 	compose_beszel="$PWD/agent.yml"
 	port_beszel_agent="$((RANDOM % 10001 + 55000))"
