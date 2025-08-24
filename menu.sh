@@ -217,9 +217,9 @@ script1() {
 	else
 		echo -e "${RED}The problem is on the side of the certificate authority. The script will be stopped in an emergency, try to start it again in a few minutes${NC}"
 		docker compose -f $compose_file down &> /dev/null
-		docker volume rm wg_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
-		rm -r vpn-wg-v14/ &> /dev/null
-		git clone $repo &> /dev/null
+		docker volume rm vpn-wg-v14_conf.d vpn-wg-v14_vhost.d vpn-wg-v14_html vpn-wg-v14_certs vpn-wg-v14_etc_wireguard &> /dev/null
+		rm -r $compose_file &> /dev/null
+		curl -L -O https://github.com/sergeybezlepkin/vpn-wg-v14/blob/main/compose.yml &> /dev/null
 		exit 1
 	fi
 
