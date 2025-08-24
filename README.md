@@ -9,7 +9,7 @@ This project is a collection of open technologies that allows both users and adm
 
 ### What problem does it solve?
 
-Economy determines politics, law, ideology. Open news from the USA, Britain, Germany, Russia, France, the crisis of these countries, the economic crisis of these countries pushes to adopt laws, laws that will limit the network space. The limitation of the network space is followed by a limitation of technology, a limitation of access to information. Information and technology become private, limited and this is a light breeze before a strong storm. Break it, use a simple setup, install your private network in any country where you can buy a server, and get access to technology and information, be prepared for the storm
+Economy determines politics, law, ideology. Open news from the USA, Great Britain, Germany, Russia, France, show the crisis of these countries, the economic crisis of these countries pushes to adopt laws that limit the network space. Limiting the network space entails limiting technologies, limiting access to information. Information and technologies become private, limited, and this is a light breeze before a strong storm. Destroy it, use simple setup and installation of your private network in any country where you can buy a server, and get access to technologies and information. Be prepared for the storm
 
 ## Main features
 
