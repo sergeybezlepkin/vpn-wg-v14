@@ -440,7 +440,7 @@ script2() {
 	awk -v hash="$escaped_hash" '/^ *- PASSWORD_HASH=/ { sub(/- PASSWORD_HASH=.*/, "- PASSWORD_HASH=" hash) } 1' "$compose_file" > temp_compose.yml && mv temp_compose.yml "$compose_file"
 	sleep 1
 	docker rm -f wireguard &> /dev/null
-	docker volume rm wg_etc_wireguard &> /dev/null
+	docker volume rm vpn-wg-v14_etc_wireguard &> /dev/null
 	docker compose up -d &> /dev/null
 	sleep 3
 	echo
