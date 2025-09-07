@@ -17,6 +17,8 @@ Economy determines politics, law, ideology. Open news from the USA, Great Britai
 -  Low resource consumption
 -  Only 3 files to run
 -  Installation and configuration via one point
+-  Random VPN server port
+-  Bridge network is used, after installation only ports 80 and 443 are open
 -  Secure: Setting up encryption, proxying and default domain name
 -  Configuring and Setting Default Observability
 
