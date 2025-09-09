@@ -65,6 +65,8 @@ The script also offers other actions:
 -  Remind whether the server is running and what domain names are registered (item 4)
 -  Configure notifications in Telegram in the monitoring system (item 5)
 
+## [Download the client for your devices](https://www.wireguard.com/install/)
+
 ## License
 
 This project uses the [MIT](https://github.com/sergeybezlepkin/vpn-wg-v14/blob/main/LICENSE)
