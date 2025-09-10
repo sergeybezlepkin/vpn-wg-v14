@@ -33,6 +33,7 @@ Economy determines politics, law, ideology. Open news from the USA, Great Britai
 -  Bridge network is used, after installation only ports 80 and 443 are open
 -  Secure: Setting up encryption, proxying and default domain name
 -  Configuring and setting default observability
+-  Automatically update images and then launch the container
 
 ### Thanks to these projects: [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy), [letsencrypt](https://github.com/jwilder/docker-letsencrypt-nginx-proxy-companion), [wg-easy](https://github.com/wg-easy/wg-easy), [beszel](https://github.com/henrygd/beszel), [watchtower](https://github.com/containrrr/watchtower)
 
