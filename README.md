@@ -61,7 +61,7 @@ git clone https://github.com/sergeybezlepkin/vpn-wg-v14.git
 ```
 We go to the catalog
 ```sh
-cd vpn-wg-v14-main
+cd vpn-wg-v14
 ```
 Make the menu.sh file executable and run it
 ```sh
