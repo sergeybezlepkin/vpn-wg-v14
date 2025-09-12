@@ -108,30 +108,30 @@ script1() {
 
 	interface="$(ip -br a | grep -Ev '^(lo|docker)' | awk '$2 == "UP" {print $1}' | head -n 1)"
 
-	echo -e "${GREEN}6 Steps to Get your two free personal domain name${NC}"
-	echo "Step 1. Use a web browser and click on the link https://www.duckdns.org, log in to your account"
+	echo -e "${GREEN}An example of a free service for getting your own free name${NC}"
+	echo "Use a web browser and click on the link https://www.duckdns.org, log in to your account"
 	sleep 2
 	echo
-	echo "Step 2. On your personal account page, add your domain name in the sub domain column, and click on the add domain button"
+	echo "On your personal account page, add your domain name in the sub domain column, and click on the add domain button"
 	sleep 2
 	echo
-	echo "Step 3. If a name already exists, think of another one"
+	echo "If a name already exists, think of another one"
 	sleep 2
 	echo
-	echo "Step 4. After adding it, you will see a line where your name and IP address will be indicated, you need to change it to your $ip and click the update ip button"
+	echo "After adding it, you will see a line where your name and IP address will be indicated, you need to change it to your $ip and click the update ip button"
 	sleep 2
 	echo
-	echo "Step 4.1. Repeat these operations for the second domain"
+	echo "Repeat these operations for the second domain"
 	sleep 2
 	echo
 
 	while true; do
-		read -p "Step 5. Now write me your first domain name Web-panel Wireguard, for example.duckdns.org and press Enter " d_name1
-		if [[ "$d_name1" =~ ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.duckdns\.org$ ]]; then
+		read -p "Now write me your first domain name Web-panel Wireguard, for example.org and press Enter " d_name1
+		if [[ "$d_name1" =~ ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$ ]]; then
 			echo -e "${GREEN}You entered domain name:${NC}" "$d_name1"
 			break
 		else
-			echo -e "${RED}Try again, incorrect format. Enter your domain name in the format subdomain.duckdns.org${NC}"
+			echo -e "${RED}Try again, incorrect format. Enter your domain name in the format example.org${NC}"
 		fi
 	done
 
@@ -140,12 +140,12 @@ script1() {
 	sleep 1
 
 	while true; do
-		read -p "Step 6. Now write me your second domain name Web-panel Beszel, for example.duckdns.org and press Enter " d_name2
-		if [[ "$d_name2" =~ ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.duckdns\.org$ ]]; then
+		read -p "Now write me your second domain name Web-panel Beszel, for example.org and press Enter " d_name2
+		if [[ "$d_name2" =~ ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$ ]]; then
 			echo -e "${GREEN}You entered domain name:${NC}" "$d_name2"
 			break
 		else
-			echo -e "${RED}Try again, incorrect format. Enter your domain name in the format subdomain.duckdns.org${NC}"
+			echo -e "${RED}Try again, incorrect format. Enter your domain name in the format example.org${NC}"
 		fi
 	done
 
@@ -234,37 +234,37 @@ script1() {
                 nmap -sU -p $random_wg_port $ip
                 exit 1
     fi
-	
+
 	echo
 	compose_beszel="$PWD/agent.yml"
 	port_beszel_agent="$((RANDOM % 10001 + 55000))"
 
-	echo -e "${GREEN}3 Steps to Configure the Beszel Web Dashboard${NC}"
-	echo "Step 1. Go to the panel https://$d_name2, create a user for this, enter your email and come up with a password. And enter the panel"
+	echo -e "${GREEN}Configure the Beszel Web Dashboard${NC}"
+	echo "Go to the panel https://$d_name2, create a user for this, enter your email and come up with a password. And enter the panel"
 	echo
 	sleep 2
-	echo "Step 2. In the upper-right corner, click on the 'Add System' button"
+	echo "In the upper-right corner, click on the 'Add System' button"
 	echo
 	sleep 2
-	echo -e "${GREEN}Step 3. In the 'Add system' window, you need to fill in the lines:${NC}"
+	echo -e "${GREEN}In the 'Add system' window, you need to fill in the lines:${NC}"
 	echo
 	sleep 1
-	echo -e "${GREEN}Step 3.1. Come up with a name${NC}"
+	echo -e "${GREEN}Come up with a name${NC}"
 	echo
 	sleep 1
-	echo -e "${GREEN}Step 3.2. Add this IP address:${NC}" "$ip"
+	echo -e "${GREEN}Add this IP address:${NC}" "$ip"
 	echo
 	sleep 1
-	echo -e "${GREEN}Step 3.3. Add this port:${NC}" "$port_beszel_agent"
+	echo -e "${GREEN}Add this port:${NC}" "$port_beszel_agent"
 	echo
 	sleep 1
-	echo -e "${GREEN}Step 3.4. Copy the line with the Public key and click Add system${NC}"
+	echo -e "${GREEN}Copy the line with the Public key and click Add system${NC}"
 
 	sed -i "s|^[[:space:]]*LISTEN:.*|       LISTEN: \"$port_beszel_agent\"|" "$compose_beszel"
 	echo
         sleep 1
 	while true; do
-		echo "Step 3.5. Insert the ssh-ed public key, use for example shift + insert to paste the code and press Enter"
+		echo "Insert the ssh-ed public key, use for example shift + insert to paste the code and press Enter"
 		read -r code
 		if [[ $code =~ ^ssh-ed25519[[:space:]]+[A-Za-z0-9+/=]+[A-Za-z0-9+/=]*$ ]]; then
 			echo -e "${GREEN}The key is accepted${NC}"
@@ -404,8 +404,6 @@ script2() {
 
 	echo -e "${GREEN}Reset your password with web-panel Wireguard${NC}"
 	echo
-	echo -e "${RED}All configured configurations will be deleted${NC}"
-	echo
 
 	while true; do
     		read -p "Ready? (yes/no) " answer
@@ -440,7 +438,6 @@ script2() {
 	awk -v hash="$escaped_hash" '/^ *- PASSWORD_HASH=/ { sub(/- PASSWORD_HASH=.*/, "- PASSWORD_HASH=" hash) } 1' "$compose_file" > temp_compose.yml && mv temp_compose.yml "$compose_file"
 	sleep 1
 	docker rm -f wireguard &> /dev/null
-	docker volume rm vpn-wg-v14_etc_wireguard &> /dev/null
 	docker compose up -d &> /dev/null
 	sleep 3
 	echo
@@ -502,22 +499,22 @@ script3() {
 	echo -e "${GREEN}The password for the Beszel database has been reset. Now you need to set a new password for the web panel in the database${NC}"
 	echo
 	sleep 1
-	echo -e "${GREEN}5 Steps to set your new password with web-panel Beszel${NC}"
+	echo -e "${GREEN}Set your new password with web-panel Beszel${NC}"
 	echo
 	sleep 1
-	echo "Step 1. Go to the database panel your_beszel_domain_name/_/#/login, for example: monv.duckdns.org/_/#/login and  using an email address and a new set password"
+	echo "Go to the database panel your_beszel_domain_name/_/#/login, for example: monv.duckdns.org/_/#/login and  using an email address and a new set password"
 	echo
 	sleep 1
-	echo "Step 2. In the menu on the left, select Collections and click on users"
+	echo "In the menu on the left, select Collections and click on users"
 	echo
 	sleep 1
-	echo "Step 3. Select your user from the list"
+	echo "Select your user from the list"
 	echo
 	sleep 1
-	echo "Step 4. From the drop-left menu on the right, select - Change password"
+	echo "From the drop-left menu on the right, select - Change password"
 	echo
 	sleep 1
-	echo "Step 5. Enter your new password and click Save Changes"
+	echo "Enter your new password and click Save Changes"
 	echo
 
 	while true; do
@@ -675,7 +672,7 @@ script6() {
 }
 
 menu() {
-    echo "	Automatic installation and configuration of WireGuard VPN server with web interface,"
+    echo -e "	Automatic installation and configuration of ${RED}WireGuard VPN${NC} server with web interface,"
     echo "      		 node monitoring, with encryption on a free domain name"
     echo
     echo -e "${GREEN}1. Install and configure VPN server Wireguard${NC}"
@@ -689,7 +686,6 @@ menu() {
     echo -e "${GREEN}2. Reset web panel password Wireguard${NC}"
     echo
     echo "  - Reset password for access to web-panel to vpn server"
-    echo -e "${RED}  - All configured configurations will be deleted${NC}"
     echo
     echo -e "${GREEN}3. Reset web panel password Beszel${NC}"
     echo
