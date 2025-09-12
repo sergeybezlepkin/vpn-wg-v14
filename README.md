@@ -8,7 +8,7 @@
 
 ##
 <div align="center">
-  <img src="/docs/screenshots/menu.PNG" width="100%" /> 
+  <img src="/docs/screenshots/new_menu.PNG" width="100%" /> 
 </div>
 
 
@@ -77,6 +77,12 @@ The script also offers other actions:
 -  Reset the password of the web monitoring panel (item 3)
 -  Remind whether the server is running and what domain names are registered (item 4)
 -  Configure notifications in Telegram in the monitoring system (item 5)
+
+After setup and installation, the system will have the following containers
+
+<div align="center">
+  <img src="/docs/screenshots/container.PNG" width="100%" /> 
+</div>
 
 ## [Download the client for your devices](https://www.wireguard.com/install/)
 
