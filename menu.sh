@@ -7,7 +7,6 @@ NC='\033[0m'
 script1() {
 	set -e
 
-	repo=https://github.com/sergeybezlepkin/vpn-wg-v14
 	compose_file="$PWD/compose.yml"
 
 	system_name="$(hostnamectl | grep "Operating System" | sed 's/^[ \t]*//;s/[ \t]*$//')"
